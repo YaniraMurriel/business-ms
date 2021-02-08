@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: business-ms
-          image: acrpurplebcp.azurecr.io/business-ms:1.0.0
+          image: acrpurplebcp.azurecr.io/business-ms:APP_VERSION
           ports:
             - containerPort: 8080
       imagePullSecrets:
