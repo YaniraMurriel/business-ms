@@ -1,0 +1,42 @@
+swagger: "2.0"
+info:
+  description: "This is a specification for DoctorBooking Api.
+  You can find out more about this application at
+  [htp://allaroundjava.com](http://allaroundjava.com)"
+  version: "1.0"
+  title: "Doctor Booking Application"
+  contact:
+    email: "adam@allaroundjava.com"
+host: "localhost:8080"
+basePath: "/"
+tags:
+  - name: "doctors"
+    description: "Everything about Doctors in the system"
+schemes:
+  - "http"
+paths:
+  /doctors:
+    post:
+      tags:
+        - "doctors"
+      summary: "Add a new doctor to Medical Clinic"
+      description: ""
+      operationId: "createDoctor"
+      consumes:
+        - "application/xml"
+      produces:
+        - "application/xml"
+      parameters:
+        - in: "body"
+          name: "DoctorDto"
+          description: "Doctor object that needs to be added to the clinic"
+          required: true
+          schema:
+            $ref: "#/definitions/DoctorDto"
+      responses:
+        201:
+          description: "Created Doctor"
+          schema:
+            $ref: "#/definitions/DoctorDto"
+        405:
+          description: "Invalid input"
